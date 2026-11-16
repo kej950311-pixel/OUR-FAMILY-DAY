@@ -13,20 +13,12 @@
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
-  function formatDate(dateStr, timeStr) {
-    const d = new Date(`${dateStr}T${timeStr}:00`);
-    const days = ['일', '월', '화', '수', '목', '금', '토'];
-    const year = d.getFullYear();
-    const month = d.getMonth() + 1;
-    const date = d.getDate();
-    const day = days[d.getDay()];
-    const hours = d.getHours();
-    const minutes = d.getMinutes();
-    const period = hours < 12 ? '오전' : '오후';
-    const h12 = hours % 12 || 12;
-    const minuteStr = minutes > 0 ? ` ${minutes}분` : '';
-    return `${year}년 ${month}월 ${date}일 ${day}요일 ${period} ${h12}시${minuteStr}`;
-  }
+function formatDate(dateStr) {
+  const d = new Date(`${dateStr}T00:00:00`);
+  const days = ['일', '월', '화', '수', '목', '금', '토'];
+
+  return `${d.getFullYear()}년 ${d.getMonth() + 1}월 ${d.getDate()}일 ${days[d.getDay()]}요일`;
+}
 
   function getWeddingDateTime() {
     return new Date(`${CONFIG.wedding.date}T${CONFIG.wedding.time}:00`);
