@@ -722,6 +722,7 @@ function initCurtain() {
     initLocation();
 // initAccounts();
     initFooter();
+    initKakaoShare();
     initScrollAnimations();
 
     const galleryImages = await loadImagesFromFolder('gallery');
