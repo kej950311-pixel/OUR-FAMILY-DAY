@@ -270,8 +270,13 @@ function initCurtain() {
   function initHero() {
     $('#heroPhoto').src = 'images/hero/1.jpg';
     $('#heroNames').textContent = `${CONFIG.groom.name}  ·  ${CONFIG.bride.name}`;
-    $('#heroDate').textContent = formatDate(CONFIG.wedding.date, CONFIG.wedding.time);
-    $('#heroVenue').textContent = CONFIG.wedding.venue;
+$('#heroDate').textContent = formatDate(CONFIG.wedding.date);
+
+const meetingTime = getWeddingDateTime();
+const period = meetingTime.getHours() < 12 ? '오전' : '오후';
+const hour = meetingTime.getHours() % 12 || 12;
+
+$('#heroVenue').textContent = `${period} ${hour}시 ${CONFIG.wedding.venue}`;
   }
 
   /* ═══════════════════════════════════════════
