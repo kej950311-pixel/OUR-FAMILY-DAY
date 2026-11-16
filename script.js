@@ -680,7 +680,6 @@ $('#heroVenue').textContent = `${period} ${hour}시 ${CONFIG.wedding.venue}`;
     initLocation();
 // initAccounts();
     initFooter();
-    initKakaoShare();
     initScrollAnimations();
 
     const galleryImages = await loadImagesFromFolder('gallery');
