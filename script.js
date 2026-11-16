@@ -598,38 +598,6 @@ function initCurtain() {
       copyToClipboard(text, '계좌번호가 복사되었습니다');
     });
   }
-
-  /* ═══════════════════════════════════════════
-     Kakao Share
-     ═══════════════════════════════════════════ */
-
-  function initKakaoShare() {
-    if (!window.Kakao || !CONFIG.kakao) {
-      console.error('카카오 SDK 또는 설정을 찾을 수 없습니다.');
-      return;
-    }
-
-    if (!Kakao.isInitialized()) {
-      Kakao.init(CONFIG.kakao.jsKey);
-    }
-
-    const footer = $('.footer');
-    const shareBtn = document.createElement('button');
-
-    shareBtn.type = 'button';
-    shareBtn.className = 'btn btn--kakao';
-    shareBtn.textContent = '카카오톡으로 초대장 보내기';
-    shareBtn.style.margin = '24px auto';
-    shareBtn.style.display = 'block';
-
-    shareBtn.addEventListener('click', () => {
-      Kakao.Share.sendCustom({
-        templateId: Number(CONFIG.kakao.templateId)
-      });
-    });
-
-    footer.appendChild(shareBtn);
-  }
   
   /* ═══════════════════════════════════════════
      Footer
@@ -715,7 +683,6 @@ function initCurtain() {
     initLocation();
 // initAccounts();
     initFooter();
-    initKakaoShare();
     initScrollAnimations();
 
     const galleryImages = await loadImagesFromFolder('gallery');
