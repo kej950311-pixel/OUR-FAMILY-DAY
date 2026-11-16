@@ -598,6 +598,45 @@ function initCurtain() {
       copyToClipboard(text, '계좌번호가 복사되었습니다');
     });
   }
+
+
+  /* ═══════════════════════════════════════════
+     Kakao Share
+     ═══════════════════════════════════════════ */
+
+  function initKakaoShare() {
+    const footer = $('.footer');
+    if (!footer || $('#kakaoShareBtn')) return;
+
+    const shareBtn = document.createElement('button');
+    shareBtn.type = 'button';
+    shareBtn.id = 'kakaoShareBtn';
+    shareBtn.className = 'btn btn--kakao';
+    shareBtn.textContent = '카카오톡으로 초대장 보내기';
+
+    shareBtn.addEventListener('click', () => {
+      try {
+        if (!window.Kakao || !CONFIG.kakao) {
+          showToast('카카오 공유 설정을 확인해 주세요.');
+          return;
+        }
+
+        if (!Kakao.isInitialized()) {
+          Kakao.init(CONFIG.kakao.jsKey);
+        }
+
+        Kakao.Share.sendCustom({
+          templateId: Number(CONFIG.kakao.templateId)
+        });
+
+      } catch (error) {
+        console.error('카카오 공유 오류:', error);
+        showToast('카카오톡 공유를 실행하지 못했습니다.');
+      }
+    });
+
+    footer.appendChild(shareBtn);
+  }
   
   /* ═══════════════════════════════════════════
      Footer
