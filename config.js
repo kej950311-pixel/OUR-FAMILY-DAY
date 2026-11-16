@@ -54,7 +54,7 @@ const CONFIG = {
   meta: {
     title: "김범준♥김은지",
     description: "새로운 가족이 되는 첫 만남에 초대합니다."
-  }
+  },
 
     // ── 8. 카카오 공유 설정 ──
   kakao: {
