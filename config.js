@@ -55,4 +55,10 @@ const CONFIG = {
     title: "김범준♥김은지",
     description: "새로운 가족이 되는 첫 만남에 초대합니다."
   }
+
+    // ── 8. 카카오 공유 설정 ──
+  kakao: {
+    jsKey: "6b6bb324fa9e2d8e77b77db9747e96a0",
+    templateId: 139003
+  }
 };
