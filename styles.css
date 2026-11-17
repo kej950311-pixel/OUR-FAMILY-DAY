@@ -1273,3 +1273,9 @@ a {
     font-weight: 600;
     text-shadow: 0 0 2px rgba(255, 255, 255, 0.9);
 }
+
+/* 메인 화면의 전체 글씨 위치 위로 이동 */
+.hero__content,
+.countdown {
+    translate: 0 -55px;
+}
