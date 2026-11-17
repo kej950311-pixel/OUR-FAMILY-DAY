@@ -1256,24 +1256,20 @@ a {
   text-shadow: 0 1px 5px rgba(255, 255, 255, 0.9);
 }
 
-/* 날짜 및 장소: 진한 글씨 + 은은한 흰색 빛 */
+/* 날짜 및 장소: 조금 더 굵고 선명하게 */
 .hero__date,
 .hero__venue {
     color: #24201f !important;
-    -webkit-text-stroke: 0.4px rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    -webkit-text-stroke: 0.2px currentColor;
     text-shadow:
         0 0 2px rgba(255, 255, 255, 0.95),
         0 1px 3px rgba(255, 255, 255, 0.85);
 }
 
-/* 상견례 D-day: 짙은 보라색 */
-.countdown__label,
-.countdown__number {
-    color: #50324f !important;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-}
-
-/* 일·시간·분·초 */
-.countdown__unit {
-    color: #625566 !important;
+/* 상견례까지 D-day 문구만 진한 보라색 */
+.countdown__label {
+    color: #35143d !important;
+    font-weight: 600;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.9);
 }
